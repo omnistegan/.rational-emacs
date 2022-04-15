@@ -6,6 +6,8 @@ The goal is to give simple access to all the already good emacs packages
 through a custom leader program, ft-leader. It is meant to integrate with
 exwm and a custom bound leader key on my keyboard.
 
+[[https://configure.zsa.io/ergodox-ez/layouts/jOdj7/latest/0][keyboard layout]]
+
 There are still challenges to running an exwm system, but in the small
 amount of configuration here, I'm happy using this setup fulltime on my system.
 
