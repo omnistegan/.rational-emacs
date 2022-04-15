@@ -41,6 +41,9 @@
 ;; everything rational loaded before this point
 
 
+;; ctrl-g often enters `:g` with dual-function settings
+;; this allows entering a useful keyboard-quit anyways
+(evil-ex-define-cmd "g" #'keyboard-quit)
 
 (require 'ft-leader)
 
@@ -57,7 +60,7 @@
 (exwm-config-example)
 
 (setq split-height-threshold 60)
-(setq split-width-threshold 120)
+(setq split-width-threshold 160)
 
 (defun juri-split-window-sensibly (&optional window)
   "replacement `split-window-sensibly' function which prefers vertical splits"
