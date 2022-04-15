@@ -44,6 +44,7 @@
 ;; ctrl-g often enters `:g` with dual-function settings
 ;; this allows entering a useful keyboard-quit anyways
 (evil-ex-define-cmd "g" #'keyboard-quit)
+(evil-ex-define-cmd ":" #'ft-leader-mode-exec)
 
 (require 'ft-leader)
 
@@ -54,10 +55,6 @@
     ("<XF86Launch9>" . "")
     ("RET" . "")))
 
-(require 'exwm)
-(require 'exwm-randr)
-(require 'exwm-config)
-(exwm-config-example)
 
 (setq split-height-threshold 60)
 (setq split-width-threshold 160)
@@ -119,10 +116,17 @@
 (define-key window-map (kbd "o") 'evil-window-move-far-right)
 
 (setq exwm-manage-configurations '((t char-mode t)))
-(exwm-enable)
-(exwm-randr-enable)
-(require 'exwm-systemtray)
-(exwm-systemtray-enable)
+
+(when (not (string= "t" (getenv "RATIONAL_EMACS_INNER")))
+  (progn
+    (require 'exwm)
+    (require 'exwm-randr)
+    (require 'exwm-config)
+    (require 'exwm-systemtray)
+    (exwm-config-example)
+    (exwm-enable)
+    (exwm-randr-enable)
+    (exwm-systemtray-enable)))
 
 (require 'vterm)
 (dolist (i exwm-input-global-keys)
@@ -133,7 +137,14 @@
  :family "IBMPlexMono" :height 185
  :weight 'normal :width 'normal)
 
-(load-theme 'modus-operandi t)
+(if (string= "t" (getenv "RATIONAL_EMACS_INNER"))
+    (load-theme 'modus-vivendi t)
+  (load-theme 'modus-operandi t)
+  )
+
+(when (string= "t" (getenv "RATIONAL_EMACS_INNER"))
+  (global-set-key (kbd "C-<XF86Launch9>") 'ft-leader-mode-exec)
+  )
 
 (projectile-mode +1)
 (winner-mode t)
