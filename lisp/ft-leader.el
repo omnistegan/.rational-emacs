@@ -5,6 +5,7 @@
 
 ;;; Code:
 (require 'cl-lib)
+(require 'exwm)
 
 (defun ft-leader-mode-upper-p (char)
   "Is the given CHAR upper case?"
