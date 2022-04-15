@@ -1,0 +1,30 @@
+* my emacs exwm config
+
+This is a pretty simple config built on top of rational emacs.
+
+The goal is to give simple access to all the already good emacs packages
+through a custom leader program, ft-leader. It is meant to integrate with
+exwm and a custom bound leader key on my keyboard.
+
+There are still challenges to running an exwm system, but in the small
+amount of configuration here, I'm happy using this setup fulltime on my system.
+
+I use it for programming, browsing, system management, communications, entertainment,
+video games (including new games, with multiplayer, like Elden Ring), etc.
+
+In theory, it can accomplish a lot more, but there are still bugs and improvements to
+be made.
+
+Bugs:
+- Getting the help map just uses the one selected map in the variable. It should consider
+  the fallback maps as well. This can be worked around by copying a map before adding a custom
+  map, but not sure if requiring that is the best solution.
+- A better way to C-g bail as an option.
+- Tighter configurations needed. We just need to consider more and get many useful functions
+  in good places on the map. This will be colemack focussed for me specifically.
+- More emacs stuff needed. Just more stuff.
+- Emacs in emacs needed. I can't be crashing when repls break and stuff....
+- Can I do a doom emacs in my emacs? That would probably be pretty good....
+- Theme isn't being loaded correctly on boot right now?
+- Sometimes char mode needs to be reactivated
+
