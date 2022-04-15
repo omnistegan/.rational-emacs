@@ -25,8 +25,9 @@
 ;;; Code:
 (add-to-list 'load-path (expand-file-name "lisp/" rational-config-path))
 (require 'rational-use-package)
-(require 'packages)
+(require 'packages) ;; all my packages loaded here
 
+;; set up no-littering immediately
 (setq no-littering-etc-directory
       (expand-file-name "config/" user-emacs-directory))
 (setq no-littering-var-directory
@@ -37,6 +38,9 @@
 (require 'rational-ui)
 (require 'rational-completion)
 (require 'rational-evil)
+;; everything rational loaded before this point
+
+
 
 (require 'ft-leader)
 
