@@ -96,7 +96,7 @@
 
 (define-key ft-main-map (kbd "C-d") 'juri-shellcommand)
 
-(defvar window-map (make-sparse-keymap))
+(defvar window-map evil-window-map)
 (define-key ft-main-map (kbd "C-w") window-map)
 (define-key window-map (kbd "C-u") 'juri-split-window-sensibly)
 (define-key window-map (kbd "C-f") 'delete-other-windows)
